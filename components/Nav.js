@@ -29,8 +29,8 @@ export default function Nav() {
         <a>{t?.nav?.home}</a>
       </Link>{" "}
       |{" "}
-      <Link href="/chapter1">
-        <a>{t?.nav?.chapter1}</a>
+      <Link href="/early">
+        <a>{t?.nav?.early}</a>
       </Link>
       <LocaleSwitcher />
     </nav>
