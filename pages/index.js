@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 import translations from "../content/translations";
 
@@ -8,7 +9,17 @@ export default function Home({ t }) {
       <Head>
         <title>{t?.nav?.home}</title>
       </Head>
-      {t?.welcome}
+      <main>
+        <div>{t?.welcome}</div>
+        <h2>Make a pull request</h2>
+        <nav>
+          <article>
+            <Link href="/early">
+              <a>{t?.nav?.early}</a>
+            </Link>
+          </article>
+        </nav>
+      </main>
     </>
   );
 }

@@ -2,10 +2,10 @@ import { Translation } from "content/translation"
 
 const translation: Translation = {
     nav: {
-        home: 'Home',
-        chapter1: 'Chapter I'
+        home: 'Make a Pull Request',
+        early: 'Early'
     },
-    welcome: 'Don Quixote'
+    welcome: 'A community resource dedicated to improving the quality and ease of writing and assessing code changes.'
 }
 
 export default translation
