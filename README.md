@@ -24,10 +24,10 @@ File: next.config.js
 
 module.exports = {
   i18n: {
-    locales: ["en", "es"],
+    locales: ["en"],
     defaultLocale: "en",
   },
-}
+};
 ~~~~~~~~~~
 
 <!-- CODEBLOCK_END -->
@@ -41,7 +41,7 @@ File: content\translation.d.ts
 
 export type Nav = {
   home: string,
-  chapter1: string,
+  early: string,
 }
 
 export type Translation = {
