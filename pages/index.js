@@ -4,22 +4,27 @@ import Link from "next/link";
 import translations from "../content/translations";
 
 export default function Home({ t }) {
+  const links = [];
+  for (const key in t?.nav) {
+    if (key !== "home") {
+      links.push(
+        <article>
+          <Link href={key === "home" ? "/" : key}>
+            <a>{t?.nav[key]}</a>
+          </Link>
+        </article>
+      );
+    }
+  }
+
   return (
     <>
       <Head>
         <title>{t?.nav?.home}</title>
       </Head>
-      <main>
-        <div>{t?.welcome}</div>
-        <h2>Make a pull request</h2>
-        <nav>
-          <article>
-            <Link href="/early">
-              <a>{t?.nav?.early}</a>
-            </Link>
-          </article>
-        </nav>
-      </main>
+      <div>{t?.welcome}</div>
+      <h2>Make a pull request</h2>
+      <nav>{links}</nav>
     </>
   );
 }

@@ -23,15 +23,18 @@ export default function Nav() {
     return <>...</>;
   }
 
+  const links = [];
+  for (const key in t?.nav) {
+    links.push(
+      <Link href={key === "home" ? "/" : key}>
+        <a>{t?.nav[key]}</a>
+      </Link>
+    );
+  }
+
   return (
     <nav>
-      <Link href="/">
-        <a>{t?.nav?.home}</a>
-      </Link>{" "}
-      |{" "}
-      <Link href="/early">
-        <a>{t?.nav?.early}</a>
-      </Link>
+      {links}
       <LocaleSwitcher />
     </nav>
   );
