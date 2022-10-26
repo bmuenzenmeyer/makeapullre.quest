@@ -3,24 +3,33 @@ import Link from "next/link";
 
 import translations from "../content/translations";
 
+import styles from "./index.module.css";
+
 export default function Home({ t }) {
+  const links = [];
+  Object.entries(t?.nav).forEach(([key, value]) => {
+    if (key !== "home") {
+      links.push(
+        <article className={styles.post} key={`post_${key}`}>
+          <header className={styles.post__header}>{value.name}</header>
+          <p className={styles.post__lede}>{value.lede}</p>
+          <Link href={key === "home" ? "/" : `/` + key}>
+            <a className={styles.post__link}>Read more.</a>
+          </Link>
+        </article>
+      );
+    }
+  });
+
   return (
-    <>
+    <div className="page">
       <Head>
-        <title>{t?.nav?.home}</title>
+        <title>{t?.nav?.home.name}</title>
       </Head>
-      <main>
-        <div>{t?.welcome}</div>
-        <h2>Make a pull request</h2>
-        <nav>
-          <article>
-            <Link href="/early">
-              <a>{t?.nav?.early}</a>
-            </Link>
-          </article>
-        </nav>
-      </main>
-    </>
+      <h1>Make a Pull Request...</h1>
+      <small className={styles.home__lede}>{t?.welcome}</small>
+      <nav className={styles.home__nav}>{links}</nav>
+    </div>
   );
 }
 

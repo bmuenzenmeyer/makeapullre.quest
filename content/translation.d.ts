@@ -1,9 +1,13 @@
+export type Post = {
+  name: string;
+  lede: string;
+};
+
 export type Nav = {
-  home: string,
-  early: string,
-}
+  [string]: Post;
+};
 
 export type Translation = {
-    nav: Nav,
-    welcome: string,
-  }
+  nav: Nav;
+  welcome: string;
+};

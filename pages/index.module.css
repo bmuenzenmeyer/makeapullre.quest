@@ -1,0 +1,33 @@
+.home__lede {
+  display: block;
+  border-bottom: 1px solid var(--theme-text);
+  padding-bottom: var(--space-large);
+  margin-bottom: var(--space-large);
+}
+
+.home__nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.home__nav > * {
+  border: 1px solid var(--theme-text);
+  padding: var(--space-medium);
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+}
+
+.post__header {
+  font-size: var(--step-3);
+}
+
+.post__lede {
+  font-size: var(--step--1);
+}
+
+.post__link {
+  margin-top: auto;
+}

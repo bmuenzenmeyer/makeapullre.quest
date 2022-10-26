@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import translations from "../content/translations";
-import LocaleSwitcher from "@components/LocaleSwitcher";
+
+import styles from "./Nav.module.css";
 
 export default function Nav() {
   const { locale } = useRouter();
@@ -19,20 +20,23 @@ export default function Nav() {
     fetchTranslation();
   }, [locale]);
 
-  if (!t) {
+  if (!t || !t.nav) {
     return <>...</>;
   }
 
-  return (
-    <nav>
-      <Link href="/">
-        <a>{t?.nav?.home}</a>
-      </Link>{" "}
-      |{" "}
-      <Link href="/early">
-        <a>{t?.nav?.early}</a>
+  const links = [];
+  Object.entries(t?.nav).forEach(([key, value]) => {
+    links.push(
+      <Link href={key === "home" ? "/" : `/` + key}>
+        <a>{key}</a>
       </Link>
-      <LocaleSwitcher />
+    );
+  });
+
+  return (
+    <nav className={styles.header__nav}>
+      {links}
+      {/* <LocaleSwitcher /> */}
     </nav>
   );
 }
