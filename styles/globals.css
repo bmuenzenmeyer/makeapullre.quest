@@ -84,12 +84,12 @@ footer {
 .post__container {
 }
 
-/* this is very specific to capturing images that are approximately 1281x999 */
-.post__container p {
+/* this is very specific to capturing images that are approximately the same size*/
+.post__container p:has(> span > img) {
   display: block;
   position: relative;
   height: 100vmin;
-  aspect-ratio: 1.28228228;
+  aspect-ratio: 1.28228228; /* 1281x999 */
 }
 
 /* THEME COLOR */
