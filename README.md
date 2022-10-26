@@ -39,16 +39,19 @@ The `content/` directory contains a TypeScript definition file ensuring you neve
 ~~~~~~~~~~ts
 File: content\translation.d.ts
 
+export type Post = {
+  name: string;
+  lede: string;
+};
+
 export type Nav = {
-  home: string,
-  early: string,
-  visual: string
-}
+  [string]: Post;
+};
 
 export type Translation = {
-    nav: Nav,
-    welcome: string,
-  }
+  nav: Nav;
+  welcome: string;
+};
 ~~~~~~~~~~
 
 <!-- CODEBLOCK_END -->

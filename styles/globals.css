@@ -81,6 +81,17 @@ footer {
   grid-column: 3 / 4;
 }
 
+.post__container {
+}
+
+/* this is very specific to capturing images that are approximately 1281x999 */
+.post__container p {
+  display: block;
+  position: relative;
+  height: 100vmin;
+  aspect-ratio: 1.28228228;
+}
+
 /* THEME COLOR */
 
 body,

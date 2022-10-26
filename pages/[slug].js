@@ -3,13 +3,14 @@ import path from "path";
 
 import matter from "gray-matter";
 import Head from "next/head";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 
 import { CONTENT_PATH, POST_FILE_PATHS } from "../utils/mdx";
 
-const components = {};
+const components = { img: ({ src }) => <Image src={src} layout="fill" /> };
 
 export default function Post({ source, frontMatter }) {
   const { isFallback } = useRouter();
@@ -25,7 +26,9 @@ export default function Post({ source, frontMatter }) {
       </Head>
       <h2>{frontMatter.title}</h2>
       <span>{frontMatter.lede}</span>
-      <MDXRemote {...source} components={components} />
+      <article className="post__container">
+        <MDXRemote {...source} components={components} />
+      </article>
     </>
   );
 }
