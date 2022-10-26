@@ -24,6 +24,7 @@ export default function Post({ source, frontMatter }) {
         <title>{`${frontMatter.title}`}</title>
       </Head>
       <h2>{frontMatter.title}</h2>
+      <span>{frontMatter.lede}</span>
       <MDXRemote {...source} components={components} />
     </>
   );

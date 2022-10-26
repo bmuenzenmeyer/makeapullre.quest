@@ -1,0 +1,4 @@
+.header__nav {
+  grid-column: 3 / 4;
+  justify-content: right;
+}

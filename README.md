@@ -42,6 +42,7 @@ File: content\translation.d.ts
 export type Nav = {
   home: string,
   early: string,
+  visual: string
 }
 
 export type Translation = {
